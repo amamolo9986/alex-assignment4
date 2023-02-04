@@ -12,10 +12,10 @@ public class MainApplication {
 		FileService fileService = new FileService();
 		StudentInfo[] studentArray = fileService.readStudents("studentmasterlist.csv");
 
-		try (BufferedWriter outputWriterCompsci = new BufferedWriter(new FileWriter("Course1.csv"));
-				BufferedWriter outputWriterApmth = new BufferedWriter(new FileWriter("Course2.csv"));
-				BufferedWriter outputWriterStat = new BufferedWriter(new FileWriter("Course3.csv"))) {
-
+			try (BufferedWriter outputWriterCompsci = new BufferedWriter(new FileWriter("Course1.csv"));
+					BufferedWriter outputWriterApmth = new BufferedWriter(new FileWriter("Course2.csv"));
+					BufferedWriter outputWriterStat = new BufferedWriter(new FileWriter("Course3.csv"))) {
+		
 			for (int i = 0; i < studentArray.length; i++) {
 			}
 			Arrays.sort(studentArray, new Comparator<StudentInfo>() {
@@ -40,27 +40,35 @@ public class MainApplication {
 			for (StudentInfo course : studentArray) {
 				if (course.getCourse().contains("COMPSCI")) {
 					compsciArray[csCtr++] = course;
-					for (int i = 0; i < compsciArray.length; i++) {
-						outputWriterCompsci.write(compsciArray[i] + "");
-						outputWriterCompsci.newLine();
-					}
 				}
 				if (course.getCourse().contains("APMTH")) {
 					apmthArray[apCtr++] = course;
-					for (int i = 0; i < apmthArray.length; i++) {
-						outputWriterApmth.write(apmthArray[i] + "\n" + "");
-						outputWriterApmth.newLine();
-					}
 				}
 				if (course.getCourse().contains("STAT")) {
 					statArray[statCtr++] = course;
-					for (int i = 0; i < statArray.length; i++) {
-						outputWriterStat.write(statArray[i] + "\n" + "");
-						outputWriterStat.newLine();
-					}
 				}
 			}
 
+			for (int i = 0; i < compsciArray.length; i++) {
+				outputWriterCompsci.write(compsciArray[i] + "");
+				outputWriterCompsci.newLine();
+			}
+			outputWriterCompsci.flush();
+			outputWriterCompsci.close();
+			
+			for (int i = 0; i < apmthArray.length; i++) {
+				outputWriterApmth.write(apmthArray[i] + "");
+				outputWriterApmth.newLine();
+			}
+			outputWriterApmth.flush();
+			outputWriterApmth.close();
+			
+			for (int i = 0; i < statArray.length; i++) {
+				outputWriterStat.write(statArray[i] + "");
+				outputWriterStat.newLine();
+			}
+			outputWriterStat.flush();
+			outputWriterStat.close();
 		}
 	}
-}
+	}
