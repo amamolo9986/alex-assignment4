@@ -47,8 +47,7 @@ public class StudentService {
 					statArray[statCtr++] = student;
 				}
 			}
-			// this all can be refactored with removing lines 35-37 and changing my for loop ^^^^
-
+			
 			for (int i = 0; i < compsciArray.length; i++) {
 				outputWriterCompsci.write(compsciArray[i] + "");
 				outputWriterCompsci.newLine();
