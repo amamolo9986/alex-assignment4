@@ -27,7 +27,6 @@ public class FileService {
 
 				studentInfo[i] = studentService.createStudent(studentID, studentName, course, grade);
 				i++;
-				//System.out.println(line);
 			}
 
 		} finally {
