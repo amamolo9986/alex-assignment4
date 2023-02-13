@@ -41,8 +41,7 @@ public class StudentInfo {
 
 	@Override
 	public String toString() {
-		return "StudentInfo [studentID=" + studentID + ", studentName=" + studentName + ", course=" + course
-				+ ", grade=" + grade + "]";
+		return studentID + "," + studentName + "," + course + "," + grade;
 	}
 
 }
