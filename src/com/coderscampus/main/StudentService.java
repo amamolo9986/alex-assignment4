@@ -47,27 +47,26 @@ public class StudentService {
 					statArray[statCtr++] = student;
 				}
 			}
-
+			outputWriterCompsci.write("Student ID" + ", Student Name" + ", Course" + ", Grade\n");
+			
 			for (int i = 0; i < compsciArray.length; i++) {
 				outputWriterCompsci.write(compsciArray[i] + "");
 				outputWriterCompsci.newLine();
 			}
-			outputWriterCompsci.flush();
-			outputWriterCompsci.close();
-
+			
+			outputWriterApmth.write("Student ID" + ", Student Name" + ", Course" + ", Grade\n"); 
+			
 			for (int i = 0; i < apmthArray.length; i++) {
 				outputWriterApmth.write(apmthArray[i] + "");
 				outputWriterApmth.newLine();
 			}
-			outputWriterApmth.flush();
-			outputWriterApmth.close();
-
+	
+			outputWriterStat.write("Student ID" + ", Student Name" + ", Course" + ", Grade\n");
+			
 			for (int i = 0; i < statArray.length; i++) {
 				outputWriterStat.write(statArray[i] + "");
 				outputWriterStat.newLine();
 			}
-			outputWriterStat.flush();
-			outputWriterStat.close();
 		}
 	}
 }
